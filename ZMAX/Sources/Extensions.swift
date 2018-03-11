@@ -102,23 +102,23 @@ extension AXUIElement
 		try AXUIElementSetAttributeValue(self, (name.rawValue as CFString), objectValue).throwIfNotSuccess()
 	}
 	
-	public func getMultipleAttributes<T>(attributes: [NSAccessibilityAttributeName], options: AXCopyMultipleAttributeOptions = []) throws -> T
+	public func getMultipleAttributes<T>(for names: [NSAccessibilityAttributeName], options: AXCopyMultipleAttributeOptions = []) throws -> T
 	{
 		let arrayPtr = UnsafeMutablePointer<CFArray?>.allocate(capacity: 1)
 		defer { arrayPtr.deallocate(capacity: 1) }
 		
-		try AXUIElementCopyMultipleAttributeValues(self, (attributes as CFArray), options, arrayPtr).throwIfNotSuccess()
+		try AXUIElementCopyMultipleAttributeValues(self, (names as CFArray), options, arrayPtr).throwIfNotSuccess()
 		let array = arrayPtr.pointee
 		return (array as! T)
 	}
 	
-	public func getAttributeCount(name: NSAccessibilityAttributeName) throws -> Int
+	public func getAttributeCount(for name: NSAccessibilityAttributeName) throws -> Int
 	{
 		var count: CFIndex = 0
 		try AXUIElementGetAttributeValueCount(self, (name.rawValue as CFString), &count).throwIfNotSuccess()
 		return count
 	}
-	public func getAttributeValues<T>(name: NSAccessibilityAttributeName, in range: CountableRange<Int>) throws -> T
+	public func getAttributeValues<T>(for name: NSAccessibilityAttributeName, in range: CountableRange<Int>) throws -> T
 	{
 		let arrayPtr = UnsafeMutablePointer<CFArray?>.allocate(capacity: 1)
 		defer { arrayPtr.deallocate(capacity: 1) }
@@ -138,7 +138,7 @@ extension AXUIElement
 		return (array as! [NSAccessibilityAttributeName])
 	}
 	
-	public func isAttributeSettable(name: NSAccessibilityAttributeName) throws -> Bool
+	public func isAttributeSettable(for name: NSAccessibilityAttributeName) throws -> Bool
 	{
 		let boolPtr = UnsafeMutablePointer<DarwinBoolean>.allocate(capacity: 1)
 		defer { boolPtr.deallocate(capacity: 1) }
