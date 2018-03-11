@@ -24,7 +24,7 @@
 
 import Cocoa
 
-public final class ZAXObserver
+public final class ZMAXObserver
 {
 	let axObserver: AXObserver
 	var removeRunLoopHandlers: [()->Void] = []
@@ -86,12 +86,12 @@ public final class ZAXObserver
 	
 	@objc final class _ObservingUserInfo: NSObject
 	{
-		weak var observer: ZAXObserver!
+		weak var observer: ZMAXObserver!
 		let element: AXUIElement
-		let notification: ZAXNotificationName
+		let notification: ZMAXNotificationName
 		let handler: (AXUIElement, [String: Any]) -> Void
 		
-		public init(observer: ZAXObserver, element: AXUIElement, notification: ZAXNotificationName, handler: @escaping (_ element: AXUIElement, _ changes: [String: Any]) -> Void)
+		public init(observer: ZMAXObserver, element: AXUIElement, notification: ZMAXNotificationName, handler: @escaping (_ element: AXUIElement, _ changes: [String: Any]) -> Void)
 		{
 			self.observer = observer
 			self.element = element
@@ -101,7 +101,7 @@ public final class ZAXObserver
 		}
 	}
 	
-	public func observe(element: AXUIElement, notification: ZAXNotificationName, handler: @escaping (_ element: AXUIElement, _ changes: [String: Any]) -> Void) throws
+	public func observe(element: AXUIElement, notification: ZMAXNotificationName, handler: @escaping (_ element: AXUIElement, _ changes: [String: Any]) -> Void) throws
 	{
 		let userInfo = _ObservingUserInfo(observer: self, element: element, notification: notification, handler: handler)
 		try AXObserverAddNotification(axObserver, element, (notification.rawValue as CFString), Unmanaged.passRetained(userInfo).toOpaque()).throwIfNotSuccess()

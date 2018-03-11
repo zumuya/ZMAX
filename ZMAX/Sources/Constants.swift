@@ -24,7 +24,7 @@
 
 import Cocoa
 
-public struct ZAXActionName: RawRepresentable
+public struct ZMAXActionName: RawRepresentable
 {
 	public let rawValue: String
 	public init(rawValue: String)
@@ -32,18 +32,18 @@ public struct ZAXActionName: RawRepresentable
 		self.rawValue = rawValue
 	}
 	
-	public static let press = ZAXActionName(rawValue: kAXPressAction)
-	public static let increment = ZAXActionName(rawValue: kAXIncrementAction)
-	public static let decrement = ZAXActionName(rawValue: kAXDecrementAction)
-	public static let confirm = ZAXActionName(rawValue: kAXConfirmAction)
-	public static let cancel = ZAXActionName(rawValue: kAXCancelAction)
-	public static let showAlternateUi = ZAXActionName(rawValue: kAXShowAlternateUIAction)
-	public static let showDefaultUi = ZAXActionName(rawValue: kAXShowDefaultUIAction)
-	public static let raise = ZAXActionName(rawValue: kAXRaiseAction)
-	public static let showMenu = ZAXActionName(rawValue: kAXShowMenuAction)
-	public static let pick = ZAXActionName(rawValue: kAXPickAction)
+	public static let press = ZMAXActionName(rawValue: kAXPressAction)
+	public static let increment = ZMAXActionName(rawValue: kAXIncrementAction)
+	public static let decrement = ZMAXActionName(rawValue: kAXDecrementAction)
+	public static let confirm = ZMAXActionName(rawValue: kAXConfirmAction)
+	public static let cancel = ZMAXActionName(rawValue: kAXCancelAction)
+	public static let showAlternateUi = ZMAXActionName(rawValue: kAXShowAlternateUIAction)
+	public static let showDefaultUi = ZMAXActionName(rawValue: kAXShowDefaultUIAction)
+	public static let raise = ZMAXActionName(rawValue: kAXRaiseAction)
+	public static let showMenu = ZMAXActionName(rawValue: kAXShowMenuAction)
+	public static let pick = ZMAXActionName(rawValue: kAXPickAction)
 }
-public struct ZAXNotificationName: RawRepresentable
+public struct ZMAXNotificationName: RawRepresentable
 {
 	public let rawValue: String
 	public init(rawValue: String)
@@ -51,43 +51,43 @@ public struct ZAXNotificationName: RawRepresentable
 		self.rawValue = rawValue
 	}
 	
-	public static let mainWindowChanged = ZAXNotificationName(rawValue: kAXMainWindowChangedNotification)
-	public static let focusedWindowChanged = ZAXNotificationName(rawValue: kAXFocusedWindowChangedNotification)
-	public static let focusedUiElementChanged = ZAXNotificationName(rawValue: kAXFocusedUIElementChangedNotification)
-	public static let applicationActivated = ZAXNotificationName(rawValue: kAXApplicationActivatedNotification)
-	public static let applicationDeactivated = ZAXNotificationName(rawValue: kAXApplicationDeactivatedNotification)
-	public static let applicationHidden = ZAXNotificationName(rawValue: kAXApplicationHiddenNotification)
-	public static let applicationShown = ZAXNotificationName(rawValue: kAXApplicationShownNotification)
-	public static let windowCreated = ZAXNotificationName(rawValue: kAXWindowCreatedNotification)
-	public static let windowMoved = ZAXNotificationName(rawValue: kAXWindowMovedNotification)
-	public static let windowResized = ZAXNotificationName(rawValue: kAXWindowResizedNotification)
-	public static let windowMiniaturized = ZAXNotificationName(rawValue: kAXWindowMiniaturizedNotification)
-	public static let windowDeminiaturized = ZAXNotificationName(rawValue: kAXWindowDeminiaturizedNotification)
-	public static let drawerCreated = ZAXNotificationName(rawValue: kAXDrawerCreatedNotification)
-	public static let sheetCreated = ZAXNotificationName(rawValue: kAXSheetCreatedNotification)
-	public static let helpTagCreated = ZAXNotificationName(rawValue: kAXHelpTagCreatedNotification)
-	public static let valueChanged = ZAXNotificationName(rawValue: kAXValueChangedNotification)
-	public static let uiElementDestroyed = ZAXNotificationName(rawValue: kAXUIElementDestroyedNotification)
-	public static let elementBusyChanged = ZAXNotificationName(rawValue: kAXElementBusyChangedNotification)
-	public static let menuOpened = ZAXNotificationName(rawValue: kAXMenuOpenedNotification)
-	public static let menuClosed = ZAXNotificationName(rawValue: kAXMenuClosedNotification)
-	public static let menuItemSelected = ZAXNotificationName(rawValue: kAXMenuItemSelectedNotification)
-	public static let rowCountChanged = ZAXNotificationName(rawValue: kAXRowCountChangedNotification)
-	public static let rowExpanded = ZAXNotificationName(rawValue: kAXRowExpandedNotification)
-	public static let rowCollapsed = ZAXNotificationName(rawValue: kAXRowCollapsedNotification)
-	public static let selectedCellsChanged = ZAXNotificationName(rawValue: kAXSelectedCellsChangedNotification)
-	public static let unitsChanged = ZAXNotificationName(rawValue: kAXUnitsChangedNotification)
-	public static let selectedChildrenMoved = ZAXNotificationName(rawValue: kAXSelectedChildrenMovedNotification)
-	public static let selectedChildrenChanged = ZAXNotificationName(rawValue: kAXSelectedChildrenChangedNotification)
-	public static let resized = ZAXNotificationName(rawValue: kAXResizedNotification)
-	public static let moved = ZAXNotificationName(rawValue: kAXMovedNotification)
-	public static let created = ZAXNotificationName(rawValue: kAXCreatedNotification)
-	public static let selectedRowsChanged = ZAXNotificationName(rawValue: kAXSelectedRowsChangedNotification)
-	public static let selectedColumnsChanged = ZAXNotificationName(rawValue: kAXSelectedColumnsChangedNotification)
-	public static let selectedTextChanged = ZAXNotificationName(rawValue: kAXSelectedTextChangedNotification)
-	public static let titleChanged = ZAXNotificationName(rawValue: kAXTitleChangedNotification)
-	public static let layoutChanged = ZAXNotificationName(rawValue: kAXLayoutChangedNotification)
-	public static let announcementRequested = ZAXNotificationName(rawValue: kAXAnnouncementRequestedNotification)
+	public static let mainWindowChanged = ZMAXNotificationName(rawValue: kAXMainWindowChangedNotification)
+	public static let focusedWindowChanged = ZMAXNotificationName(rawValue: kAXFocusedWindowChangedNotification)
+	public static let focusedUiElementChanged = ZMAXNotificationName(rawValue: kAXFocusedUIElementChangedNotification)
+	public static let applicationActivated = ZMAXNotificationName(rawValue: kAXApplicationActivatedNotification)
+	public static let applicationDeactivated = ZMAXNotificationName(rawValue: kAXApplicationDeactivatedNotification)
+	public static let applicationHidden = ZMAXNotificationName(rawValue: kAXApplicationHiddenNotification)
+	public static let applicationShown = ZMAXNotificationName(rawValue: kAXApplicationShownNotification)
+	public static let windowCreated = ZMAXNotificationName(rawValue: kAXWindowCreatedNotification)
+	public static let windowMoved = ZMAXNotificationName(rawValue: kAXWindowMovedNotification)
+	public static let windowResized = ZMAXNotificationName(rawValue: kAXWindowResizedNotification)
+	public static let windowMiniaturized = ZMAXNotificationName(rawValue: kAXWindowMiniaturizedNotification)
+	public static let windowDeminiaturized = ZMAXNotificationName(rawValue: kAXWindowDeminiaturizedNotification)
+	public static let drawerCreated = ZMAXNotificationName(rawValue: kAXDrawerCreatedNotification)
+	public static let sheetCreated = ZMAXNotificationName(rawValue: kAXSheetCreatedNotification)
+	public static let helpTagCreated = ZMAXNotificationName(rawValue: kAXHelpTagCreatedNotification)
+	public static let valueChanged = ZMAXNotificationName(rawValue: kAXValueChangedNotification)
+	public static let uiElementDestroyed = ZMAXNotificationName(rawValue: kAXUIElementDestroyedNotification)
+	public static let elementBusyChanged = ZMAXNotificationName(rawValue: kAXElementBusyChangedNotification)
+	public static let menuOpened = ZMAXNotificationName(rawValue: kAXMenuOpenedNotification)
+	public static let menuClosed = ZMAXNotificationName(rawValue: kAXMenuClosedNotification)
+	public static let menuItemSelected = ZMAXNotificationName(rawValue: kAXMenuItemSelectedNotification)
+	public static let rowCountChanged = ZMAXNotificationName(rawValue: kAXRowCountChangedNotification)
+	public static let rowExpanded = ZMAXNotificationName(rawValue: kAXRowExpandedNotification)
+	public static let rowCollapsed = ZMAXNotificationName(rawValue: kAXRowCollapsedNotification)
+	public static let selectedCellsChanged = ZMAXNotificationName(rawValue: kAXSelectedCellsChangedNotification)
+	public static let unitsChanged = ZMAXNotificationName(rawValue: kAXUnitsChangedNotification)
+	public static let selectedChildrenMoved = ZMAXNotificationName(rawValue: kAXSelectedChildrenMovedNotification)
+	public static let selectedChildrenChanged = ZMAXNotificationName(rawValue: kAXSelectedChildrenChangedNotification)
+	public static let resized = ZMAXNotificationName(rawValue: kAXResizedNotification)
+	public static let moved = ZMAXNotificationName(rawValue: kAXMovedNotification)
+	public static let created = ZMAXNotificationName(rawValue: kAXCreatedNotification)
+	public static let selectedRowsChanged = ZMAXNotificationName(rawValue: kAXSelectedRowsChangedNotification)
+	public static let selectedColumnsChanged = ZMAXNotificationName(rawValue: kAXSelectedColumnsChangedNotification)
+	public static let selectedTextChanged = ZMAXNotificationName(rawValue: kAXSelectedTextChangedNotification)
+	public static let titleChanged = ZMAXNotificationName(rawValue: kAXTitleChangedNotification)
+	public static let layoutChanged = ZMAXNotificationName(rawValue: kAXLayoutChangedNotification)
+	public static let announcementRequested = ZMAXNotificationName(rawValue: kAXAnnouncementRequestedNotification)
 }
 
 extension AXError: LocalizedError

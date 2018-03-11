@@ -31,9 +31,9 @@ extension NSRunningApplication
 		return AXUIElement.application(processIdentifier: processIdentifier)
 	}
 	
-	public func newAccessibilityObserver(runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws -> ZAXObserver
+	public func newAccessibilityObserver(runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws -> ZMAXObserver
 	{
-		return try ZAXObserver(processIdentifier: processIdentifier, runLoopModes: runLoopModes)
+		return try ZMAXObserver(processIdentifier: processIdentifier, runLoopModes: runLoopModes)
 	}
 }
 
@@ -148,7 +148,7 @@ extension AXUIElement
 		return bool
 	}
 	
-	public func performAction(_ action: ZAXActionName) throws
+	public func performAction(_ action: ZMAXActionName) throws
 	{
 		try AXUIElementPerformAction(self, action.rawValue as CFString).throwIfNotSuccess()
 	}
