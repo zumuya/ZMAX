@@ -71,15 +71,23 @@ This framework extends AXError with LocalizedError protocol.
 
 ### Throwing
 
-You can throw an AXError like Swift errors.
+You can throw an AXError as a Swift error.
 
 ```swift
 let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
-if (axError != .success) {
-	throw axError
-}
+	if (axError != .success) {
+		throw axError
+	}
 }
 ```
+### Throwing with method
+
+By using `AXError.throwIfNotSuccess()` method, you can call existing functions with `try` keyword.
+
+```swift
+try AXUIElementPerformAction(finder.accessibilityElement, kAXPressAction as CFString).throwIfNotSuccess()
+```
+
 ### Localizing messages
 
 This framework doesn't contain any localization for error messages. But you can provide and customize messages.
