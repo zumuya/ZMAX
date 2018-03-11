@@ -105,7 +105,7 @@ extension AXError: LocalizedError
 		}
 	}
 	
-	public static var customLocalizedDescriptionHandlers: [((AXError) -> String?)] = []
+	public static var localizedDescriptionHandlers: [((AXError) -> String?)] = []
 	public static var recoverySuggestionHandlers: [((AXError) -> String?)] = []
 	
 	public var recoverySuggestion: String?
@@ -120,8 +120,8 @@ extension AXError: LocalizedError
 	
 	public var errorDescription: String?
 	{
-		for customLocalizedDescriptionHandler in AXError.customLocalizedDescriptionHandlers {
-			if let localizedDescription = customLocalizedDescriptionHandler(self) {
+		for localizedDescriptionHandler in AXError.localizedDescriptionHandlers {
+			if let localizedDescription = localizedDescriptionHandler(self) {
 				return localizedDescription
 			}
 		}
