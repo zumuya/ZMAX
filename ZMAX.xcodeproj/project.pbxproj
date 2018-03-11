@@ -20,6 +20,7 @@
 		7839D15D2054CB43003B388E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7839D15F2054CC5A003B388E /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		7839D1612054CC8D003B388E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7839D16320550CC8003B388E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		7839D147205418D0003B388E = {
 			isa = PBXGroup;
 			children = (
+				7839D16320550CC8003B388E /* README.md */,
 				7839D153205418D0003B388E /* ZMAX */,
 				7839D152205418D0003B388E /* Products */,
 			);
