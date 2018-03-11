@@ -47,7 +47,6 @@ if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.
 	
 	let windows = try safari.getAttribute(for: .windows) as [AXUIElement]
 	for window in windows {
-		let title = try window.getAttribute(for: .title) as String
 		let minimizeButton = try window.getAttribute(for: .minimizeButton) as AXUIElement
 		try minimizeButton.performAction(.press)
 	}
