@@ -59,9 +59,8 @@ if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.
 			print("focused element changed to \(role).")
 		}
 	}
+	self.safariObserver = observer //keep it!
 }
-
-self.safariObserver = observer //keep it!
 ```
 ## Using original APIs
 
