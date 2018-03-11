@@ -106,6 +106,13 @@ AXError.recoverySuggestionHandlers.append { error in
 }
 ```
 
+## Troubleshooting
+
+When it doesn't work, check following:
+
+- Your app is not limited to use accessibility APIs by sandbox.
+- Your app is allowed to use accessibility APIs in System Preferences.
+
 ## License
 
 This framework is distributed under the terms of the [MIT License](LICENSE).
