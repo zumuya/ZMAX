@@ -28,10 +28,12 @@ public final class ZAXObserver
 {
 	let axObserver: AXObserver
 	var removeRunLoopHandlers: [()->Void] = []
+	
 	convenience init(application: NSRunningApplication, runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws
 	{
 		try self.init(processIdentifier: application.processIdentifier, runLoopModes: runLoopModes)
 	}
+	
 	public init(processIdentifier: pid_t, runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws
 	{
 		let observerPtr = UnsafeMutablePointer<AXObserver?>.allocate(capacity: 1)
