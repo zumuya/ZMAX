@@ -58,3 +58,34 @@ if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.
 
 self.safariObserver = observer //keep it!
 ```
+## Using original APIs
+
+Since this framework just extends original AXUIElement type, you can use original APIs without casting.
+
+```swift
+let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
+```
+## Error
+
+This framework extends AXError with LocalizedError protocol.
+
+### Throwing
+
+You can throw an AXError like Swift errors.
+
+```swift
+let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
+if (axError != .success) {
+	throw axError
+}
+}
+```
+### Localizing messages
+
+This framework doesn't contain any localization for error messages. But you can provide and customize messages.
+
+```swift
+AXError.customLocalizedDescriptionHandlers.append { error in
+	NSLocalizedString(String(format: "AXError_%i", error.rawValue), comment: "")
+}
+```
