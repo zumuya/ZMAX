@@ -31,7 +31,7 @@ extension NSRunningApplication
 		return AXUIElement.application(processIdentifier: processIdentifier)
 	}
 	
-	public func newAccessibilityObserver(runLoopModes: [RunLoopMode]) throws -> ZAXObserver
+	public func newAccessibilityObserver(runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws -> ZAXObserver
 	{
 		return try ZAXObserver(processIdentifier: processIdentifier, runLoopModes: runLoopModes)
 	}
