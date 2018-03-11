@@ -2,6 +2,9 @@
 
 ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 
+- Requirements: OS X 10.11 or later
+- Swift version: 4.0
+
 ## General usage
 
 ### Getting an application element
@@ -62,18 +65,18 @@ self.safariObserver = observer //keep it!
 ```
 ## Using original APIs
 
-Since this framework just extends original AXUIElement type, you can use original APIs without casting.
+Since this framework just extends original `AXUIElement` type, you can use original APIs without casting.
 
 ```swift
 let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
 ```
 ## Error
 
-This framework extends AXError with LocalizedError protocol.
+This framework extends `AXError` with `LocalizedError` protocol.
 
 ### Throwing
 
-You can throw an AXError as a Swift error.
+You can throw an `AXError` as a Swift error.
 
 ```swift
 let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
@@ -102,3 +105,7 @@ AXError.recoverySuggestionHandlers.append { error in
 	NSLocalizedString(String(format: "AXError_recoverySuggestion_%i", error.rawValue), comment: "")
 }
 ```
+
+## License
+
+This framework is distributed under the terms of the [MIT License](LICENSE).
