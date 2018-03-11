@@ -5,6 +5,16 @@ ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 - Requirements: OS X 10.11 or later
 - Swift version: 4.0
 
+## Installation
+
+### Carthage
+
+This install this framework using [Carthage](https://github.com/Carthage/Carthage), add the following line to your Cartfile.
+
+```
+github "zumuya/ZMAX"
+```
+
 ## General usage
 
 ### Getting an application element
@@ -79,9 +89,8 @@ You can throw an `AXError` as a Swift error.
 
 ```swift
 let axError = AXUIElementPerformAction(minimizeButton, (kAXPressAction as CFString))
-	if (axError != .success) {
-		throw axError
-	}
+if (axError != .success) {
+	throw axError
 }
 ```
 ### Throwing with method
