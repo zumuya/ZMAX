@@ -2,7 +2,7 @@
 
 ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 
-## Usages
+## General usage
 
 ### Getting an application element
 
@@ -25,7 +25,7 @@ let windows = try safari.getAttribute(for: .windows) as [AXUIElement]
 try minimizeButton.performAction(.press)
 ```
 
-### Example 1: Pressing minimize buttons in Safari
+### Example: Pressing minimize buttons in Safari
 
 ```swift
 let runningApps = NSWorkspace.shared.runningApplications
@@ -41,7 +41,9 @@ if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.
 }
 ```
 
-### Example2: Observing focused UI element changes in Safari
+## Observing
+
+### Example: Observing focused UI element changes in Safari
 
 ```swift
 let runningApps = NSWorkspace.shared.runningApplications
