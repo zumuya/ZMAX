@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7839D156205418D0003B388E /* ZMAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 7839D154205418D0003B388E /* ZMAX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7839D15E2054CB43003B388E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D15D2054CB43003B388E /* Constants.swift */; };
 		7839D1602054CC5A003B388E /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D15F2054CC5A003B388E /* Observer.swift */; };
 		7839D1622054CC8D003B388E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D1612054CC8D003B388E /* Extensions.swift */; };
@@ -15,7 +14,6 @@
 
 /* Begin PBXFileReference section */
 		7839D151205418D0003B388E /* ZMAX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMAX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7839D154205418D0003B388E /* ZMAX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAX.h; sourceTree = "<group>"; };
 		7839D155205418D0003B388E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7839D15D2054CB43003B388E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7839D15F2054CC5A003B388E /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 		7839D153205418D0003B388E /* ZMAX */ = {
 			isa = PBXGroup;
 			children = (
-				7839D154205418D0003B388E /* ZMAX.h */,
 				7839D155205418D0003B388E /* Info.plist */,
 				7839D15C2054CAF0003B388E /* Sources */,
 			);
@@ -78,7 +75,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7839D156205418D0003B388E /* ZMAX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
