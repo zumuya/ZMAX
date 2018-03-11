@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		7839D156205418D0003B388E /* ZMAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 7839D154205418D0003B388E /* ZMAX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7839D15E2054CB43003B388E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D15D2054CB43003B388E /* Constants.swift */; };
+		7839D1602054CC5A003B388E /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D15F2054CC5A003B388E /* Observer.swift */; };
+		7839D1622054CC8D003B388E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839D1612054CC8D003B388E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7839D151205418D0003B388E /* ZMAX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMAX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7839D154205418D0003B388E /* ZMAX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAX.h; sourceTree = "<group>"; };
 		7839D155205418D0003B388E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7839D15D2054CB43003B388E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7839D15F2054CC5A003B388E /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		7839D1612054CC8D003B388E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +54,19 @@
 			children = (
 				7839D154205418D0003B388E /* ZMAX.h */,
 				7839D155205418D0003B388E /* Info.plist */,
+				7839D15C2054CAF0003B388E /* Sources */,
 			);
 			path = ZMAX;
+			sourceTree = "<group>";
+		};
+		7839D15C2054CAF0003B388E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7839D15D2054CB43003B388E /* Constants.swift */,
+				7839D15F2054CC5A003B388E /* Observer.swift */,
+				7839D1612054CC8D003B388E /* Extensions.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +112,7 @@
 				TargetAttributes = {
 					7839D150205418D0003B388E = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -131,6 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7839D15E2054CB43003B388E /* Constants.swift in Sources */,
+				7839D1622054CC8D003B388E /* Extensions.swift in Sources */,
+				7839D1602054CC5A003B388E /* Observer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +273,7 @@
 		7839D15A205418D0003B388E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -268,6 +290,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -275,6 +298,7 @@
 		7839D15B205418D0003B388E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
