@@ -37,7 +37,24 @@ if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.
 		let title = try window.getAttribute(for: .title) as String
 		let minimizeButton = try window.getAttribute(for: .minimizeButton) as AXUIElement
 		try minimizeButton.performAction(.press)
-		
 	}
 }
+```
+
+### Example2: Observing focused UI element changes in Safari
+
+```swift
+let runningApps = NSWorkspace.shared.runningApplications
+if let safariApp = runningApps.first(where: { $0.bundleIdentifier == "com.apple.Safari" }) {
+	let safari = safariApp.accessibilityElement
+	
+	let observer = try safariApp.newAccessibilityObserver()
+	try observer.observe(element: safari, notification: .focusedUiElementChanged) { element, changes in
+		if let role = try? element.getAttribute(for: .role) as String {
+			print("focused element changed to \(role).")
+		}
+	}
+}
+
+self.safariObserver = observer //keep it!
 ```
