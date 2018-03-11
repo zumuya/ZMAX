@@ -95,7 +95,10 @@ try AXUIElementPerformAction(finder.accessibilityElement, kAXPressAction as CFSt
 This framework doesn't contain any localization for error messages. But you can provide and customize messages.
 
 ```swift
-AXError.customLocalizedDescriptionHandlers.append { error in
-	NSLocalizedString(String(format: "AXError_%i", error.rawValue), comment: "")
+AXError.localizedDescriptionHandlers.append { error in
+	NSLocalizedString(String(format: "AXError_description_%i", error.rawValue), comment: "")
+}
+AXError.recoverySuggestionHandlers.append { error in
+	NSLocalizedString(String(format: "AXError_recoverySuggestion_%i", error.rawValue), comment: "")
 }
 ```
