@@ -9,7 +9,7 @@ ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 
 ### Carthage
 
-This install this framework using [Carthage](https://github.com/Carthage/Carthage), add the following line to your Cartfile.
+To install this framework using [Carthage](https://github.com/Carthage/Carthage), add the following line to your Cartfile.
 
 ```
 github "zumuya/ZMAX"
