@@ -33,12 +33,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28EEEBAE26B8A90C00360256 /* ZMAX */ = {
+			isa = PBXGroup;
+			children = (
+				7839D155205418D0003B388E /* Info.plist */,
+				7839D15C2054CAF0003B388E /* Sources */,
+				7839D152205418D0003B388E /* Products */,
+			);
+			path = ZMAX;
+			sourceTree = "<group>";
+		};
 		7839D147205418D0003B388E = {
 			isa = PBXGroup;
 			children = (
-				28EEEBA126B89FA400360256 /* Package.swift */,
 				7839D16320550CC8003B388E /* README.md */,
-				7839D153205418D0003B388E /* ZMAX */,
+				28EEEBA126B89FA400360256 /* Package.swift */,
+				28EEEBAE26B8A90C00360256 /* ZMAX */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,16 +59,6 @@
 			);
 			name = Products;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		7839D153205418D0003B388E /* ZMAX */ = {
-			isa = PBXGroup;
-			children = (
-				7839D155205418D0003B388E /* Info.plist */,
-				7839D15C2054CAF0003B388E /* Sources */,
-				7839D152205418D0003B388E /* Products */,
-			);
-			path = ZMAX;
 			sourceTree = "<group>";
 		};
 		7839D15C2054CAF0003B388E /* Sources */ = {
