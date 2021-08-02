@@ -12,6 +12,6 @@ let package = Package(
     targets: [
         .target(
             name: "ZMAX",
-            path: "Sources"),
+            path: "ZMAX/Sources"),
     ]
 )
