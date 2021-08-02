@@ -13,6 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28EEEBA126B89FA400360256 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		7839D151205418D0003B388E /* ZMAX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZMAX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7839D155205418D0003B388E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7839D15D2054CB43003B388E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -35,9 +36,9 @@
 		7839D147205418D0003B388E = {
 			isa = PBXGroup;
 			children = (
+				28EEEBA126B89FA400360256 /* Package.swift */,
 				7839D16320550CC8003B388E /* README.md */,
 				7839D153205418D0003B388E /* ZMAX */,
-				7839D152205418D0003B388E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +48,7 @@
 				7839D151205418D0003B388E /* ZMAX.framework */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7839D153205418D0003B388E /* ZMAX */ = {
@@ -54,6 +56,7 @@
 			children = (
 				7839D155205418D0003B388E /* Info.plist */,
 				7839D15C2054CAF0003B388E /* Sources */,
+				7839D152205418D0003B388E /* Products */,
 			);
 			path = ZMAX;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PKGINFO_FILE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -266,6 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PKGINFO_FILE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;

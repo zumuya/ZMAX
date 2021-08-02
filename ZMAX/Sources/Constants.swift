@@ -158,6 +158,6 @@ extension AXError: LocalizedError
 			return "Accessibility parameterized attribute is not supported"
 		case .notEnoughPrecision:
 			return "Accessibility: Not enough precision"
-		}
+        }
 	}
 }
