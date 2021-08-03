@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "ZMAX",
+    platforms: [
+        .macOS(.v10_14.4),
+    ],
     products: [
         .library(
             name: "ZMAX",
