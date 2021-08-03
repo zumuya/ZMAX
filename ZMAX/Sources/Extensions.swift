@@ -153,3 +153,6 @@ extension AXUIElement
 		try AXUIElementPerformAction(self, action.rawValue as CFString).throwIfNotSuccess()
 	}
 }
+
+public extension AXObserver {
+}
