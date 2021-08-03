@@ -2,8 +2,8 @@
 
 ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 
-- Requirements: OS X 10.14.4 or later
-- Swift version: 5.0
+- Requirements: OS X 10.15 or later
+- Swift version: 5.2
 
 ## Installation
 
