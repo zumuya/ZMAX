@@ -29,7 +29,7 @@ public final class ZMAXObserver
 	let axObserver: AXObserver
 	var removeRunLoopHandlers: [()->Void] = []
 	
-	convenience init(application: NSRunningApplication, runLoopModes: [RunLoop.Mode] = [RunLoop.Mode.default]) throws
+	public convenience init(application: NSRunningApplication, runLoopModes: [RunLoop.Mode] = [RunLoop.Mode.default]) throws
 	{
 		try self.init(processIdentifier: application.processIdentifier, runLoopModes: runLoopModes)
 	}
