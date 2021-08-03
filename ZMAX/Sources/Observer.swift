@@ -26,7 +26,7 @@ import Cocoa
 
 public final class ZMAXObserver
 {
-	let axObserver: AXObserver!
+	public let axObserver: AXObserver!
 	var removeRunLoopHandlers: [()->Void] = []
 	
 	public convenience init(application: NSRunningApplication, runLoopModes: [RunLoop.Mode] = [RunLoop.Mode.default]) throws
