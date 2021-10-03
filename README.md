@@ -2,8 +2,8 @@
 
 ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 
-- Requirements: OS X 10.11 or later
-- Swift version: 4.0
+- Requirements: OS X 10.15 or later
+- Swift version: 5.2
 
 ## Installation
 
@@ -12,7 +12,7 @@ ZMAX is a framework that bridges AX (Accessibility) APIs to Swift.
 To install this framework using [Carthage](https://github.com/Carthage/Carthage), add the following line to your Cartfile.
 
 ```
-github "zumuya/ZMAX"
+github "soundflix/ZMAX"
 ```
 
 ## General usage

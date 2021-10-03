@@ -26,18 +26,18 @@ import Cocoa
 
 public final class ZMAXObserver
 {
-	let axObserver: AXObserver
+	public let axObserver: AXObserver
 	var removeRunLoopHandlers: [()->Void] = []
 	
-	convenience init(application: NSRunningApplication, runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws
+	public convenience init(application: NSRunningApplication, runLoopModes: [RunLoop.Mode] = [RunLoop.Mode.default]) throws
 	{
 		try self.init(processIdentifier: application.processIdentifier, runLoopModes: runLoopModes)
 	}
 	
-	public init(processIdentifier: pid_t, runLoopModes: [RunLoopMode] = [.defaultRunLoopMode]) throws
+	public init(processIdentifier: pid_t, runLoopModes: [RunLoop.Mode] = [RunLoop.Mode.default]) throws
 	{
 		let observerPtr = UnsafeMutablePointer<AXObserver?>.allocate(capacity: 1)
-		defer { observerPtr.deallocate(capacity: 1) }
+		defer { observerPtr.deallocate() }
 		try AXObserverCreateWithInfoCallback(processIdentifier, { (observer, element, notification, /*nullable*/changesCf, userInfoPtr) in
 			if let userInfoPtr = userInfoPtr {
 				let userInfo = Unmanaged<_ObservingUserInfo>.fromOpaque(userInfoPtr).takeUnretainedValue()
@@ -77,7 +77,7 @@ public final class ZMAXObserver
 	}
 	func removeNotification(userInfo: _ObservingUserInfo) throws
 	{
-		if let index = handleInfos.index(of: userInfo) {
+		if let index = handleInfos.firstIndex(of: userInfo) {
 			try AXObserverRemoveNotification(axObserver, userInfo.element, (userInfo.notification.rawValue as CFString)).throwIfNotSuccess()
 			Unmanaged.passUnretained(userInfo).release()
 			handleInfos.remove(at: index)
