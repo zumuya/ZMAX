@@ -23,6 +23,7 @@
  */
 
 import Cocoa
+import os
 
 public struct ZMAXActionName: RawRepresentable
 {
@@ -137,7 +138,7 @@ extension AXError: LocalizedError
 		case .invalidUIElementObserver:
 			return "Accessibility: Invalid UI element observer"
 		case .cannotComplete:
-			return "Cannot complete."
+			return "Accessibility: Cannot complete."
 		case .attributeUnsupported:
 			return "Accessibility Attribute is not supported."
 		case .actionUnsupported:
@@ -158,6 +159,9 @@ extension AXError: LocalizedError
 			return "Accessibility parameterized attribute is not supported"
 		case .notEnoughPrecision:
 			return "Accessibility: Not enough precision"
+        @unknown default:
+            os_log(.error, log: .init(subsystem: "ZMAX", category: "Constants"), "Unknown Error")
+            return "Accessibility: Unknown Error"
         }
 	}
 }
