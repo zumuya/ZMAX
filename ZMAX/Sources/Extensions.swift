@@ -57,6 +57,15 @@ extension AXUIElement
 		let object = objectPtr.pointee
 		return (object as! T)
 	}
+    public func getAttributeOptional<T>(for name: NSAccessibility.Attribute) throws -> T?
+    {
+        let objectPtr = UnsafeMutablePointer<AnyObject?>.allocate(capacity: 1)
+        defer { objectPtr.deallocate() }
+        
+        try AXUIElementCopyAttributeValue(self, (name.rawValue as CFString), objectPtr).throwIfNotSuccess()
+        let object = objectPtr.pointee
+        return (object as? T)
+    }
 	public func getAttribute<T>(for name: NSAccessibility.Attribute, axType: AXValueType) throws -> T
 	{
 		let axValue: AXValue = try getAttribute(for: name)
