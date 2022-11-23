@@ -162,3 +162,61 @@ extension AXUIElement
 		try AXUIElementPerformAction(self, action.rawValue as CFString).throwIfNotSuccess()
 	}
 }
+
+extension AXUIElement {
+    /// Gets the element at the specified coordinates.
+    ///
+    /// This can only be called on applications and the system-wide element.
+    public func elementAtPosition(appUIElement: AXUIElement, _ x: Float, _ y: Float) throws -> AXUIElement? {
+        var element: AXUIElement?
+        let error = AXUIElementCopyElementAtPosition(self, x, y, &element)
+        if error == .noValue {
+            return nil
+        }
+        guard error == .success else {
+            throw error
+        }
+        return element
+    }
+    
+    public static func systemwide(at position: NSPoint) -> AXUIElement? {
+        let swElement = AXUIElementCreateSystemWide()
+        do {
+            if let swElementAtPos = try swElement.elementAtPosition(appUIElement: swElement, Float(position.x), Float(position.y)) {
+                return swElementAtPos
+            }
+        } catch {
+            print("\(error.self): \(error.localizedDescription)")
+            // FIXME: os_log or throw
+        }
+        return nil
+    }
+    
+    /// Returns the process ID of the application that the element is a part of.
+    ///
+    /// Throws only if the element is invalid (`Errors.InvalidUIElement`).
+    open func pid() throws -> pid_t {
+        var pid: pid_t = -1
+        let error = AXUIElementGetPid(self, &pid)
+        guard error == .success else {
+            throw error
+        }
+        return pid
+    }
+}
+
+// for conversion AXValue (wrapper) <> wrapped value
+// from: https://github.com/keith/ModMove/blob/main/ModMove/AXValue%2BHelper.swift
+extension AXValue {
+    func toValue<T>() -> T? {
+        let pointer = UnsafeMutablePointer<T>.allocate(capacity: 1)
+        let success = AXValueGetValue(self, AXValueGetType(self), pointer)
+        return success ? pointer.pointee : nil
+    }
+
+    static func from<T>(value: T, type: AXValueType) -> AXValue? {
+        let pointer = UnsafeMutablePointer<T>.allocate(capacity: 1)
+        pointer.pointee = value
+        return AXValueCreate(type, pointer)
+    }
+}
