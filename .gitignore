@@ -18,3 +18,5 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.hmap
+
+*xcshareddata/
