@@ -64,7 +64,7 @@ public final class ZMAXObserver
 			removeRunLoopHandler()
 		}
 	}
-	func invalidate()
+	public func invalidate()
 	{
 		let handleInfos_ = handleInfos
 		for handleInfo in handleInfos_ {
