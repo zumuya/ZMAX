@@ -210,12 +210,18 @@ extension AXUIElement {
 extension AXValue {
     public func toValue<T>() -> T? {
         let pointer = UnsafeMutablePointer<T>.allocate(capacity: 1)
+	defer {
+            pointer.deallocate()
+        }
         let success = AXValueGetValue(self, AXValueGetType(self), pointer)
         return success ? pointer.pointee : nil
     }
 
     public static func from<T>(value: T, type: AXValueType) -> AXValue? {
         let pointer = UnsafeMutablePointer<T>.allocate(capacity: 1)
+	defer {
+            pointer.deallocate()
+        }
         pointer.pointee = value
         return AXValueCreate(type, pointer)
     }
