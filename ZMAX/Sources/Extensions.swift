@@ -23,6 +23,7 @@
  */
 
 import Cocoa
+import os
 
 extension NSRunningApplication
 {
@@ -47,16 +48,28 @@ extension AXUIElement
 	{
 		return AXUIElementCreateApplication(processIdentifier)
 	}
-	
-	public func getAttribute<T>(for name: NSAccessibility.Attribute) throws -> T
-	{
-		let objectPtr = UnsafeMutablePointer<AnyObject?>.allocate(capacity: 1)
-		defer { objectPtr.deallocate() }
-		
-		try AXUIElementCopyAttributeValue(self, (name.rawValue as CFString), objectPtr).throwIfNotSuccess()
-		let object = objectPtr.pointee
-		return (object as! T)
-	}
+    /// Gets the specified attribute value
+    ///
+    /// - throws:
+    /// -  AXError of wrapped method
+    /// - ZMAXError.AttributeCastValueFailed(attribute.rawValue) if value cast fails
+    public func getAttribute<T>(for name: NSAccessibility.Attribute) throws -> T
+    {
+        let objectPtr = UnsafeMutablePointer<AnyObject?>.allocate(capacity: 1)
+        defer { objectPtr.deallocate() }
+        
+        try AXUIElementCopyAttributeValue(self, (name.rawValue as CFString), objectPtr).throwIfNotSuccess()
+        let object = objectPtr.pointee
+        // return (object as! T)
+        /// Throw if can not cast
+        guard let objectValue = object as? T else {
+            os_log(.error, log: .init(subsystem: "ZMAX", category: "Extensions"), "Casting attribute value failed, %{Public}@", name.rawValue)
+            throw ZMAXError.AttributeCastValueFailed(name.rawValue)
+        }
+        return objectValue
+        // TODO: another option: check for AXValue type: Only for CGSize, CGPoint, CFRange, CGRect?
+        // https://github.com/keith/ModMove/blob/main/ModMove/AccessibilityElement.swift
+    }
     public func getAttributeOptional<T>(for name: NSAccessibility.Attribute) throws -> T?
     {
         let objectPtr = UnsafeMutablePointer<AnyObject?>.allocate(capacity: 1)
@@ -225,4 +238,9 @@ extension AXValue {
         pointer.pointee = value
         return AXValueCreate(type, pointer)
     }
+}
+
+// FIXME: New file not recognized in build?
+enum ZMAXError: Error {
+    case AttributeCastValueFailed(_ attribute: String)
 }
